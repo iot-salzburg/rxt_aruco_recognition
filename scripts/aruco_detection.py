@@ -131,16 +131,11 @@ def detect_aruco():
 
     while(True):
         ret, frame = cap.read()
-        kernel = np.array([[0, -1, 0],
-                        [-1, 5,-1],
-                        [0, -1, 0]])
-        image_sharp = cv2.filter2D(src=frame, ddepth=-1, kernel=kernel)
-        frame2 = increase_brightness(image_sharp,-30)
-        gray = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY) # converting colored frame into gray so we can easily identify aruco
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) # converting colored frame into gray so we can easily identify aruco
         aruco_dict = aruco.Dictionary_get(aruco.DICT_5X5_250) # to find the aruco we need set the size of the aruco which we are using 5x5
         parameters = aruco.DetectorParameters_create()
         corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters = parameters) # detcting markers
-        output = aruco.drawDetectedMarkers(image_sharp, corners, ids)  # detect the aruco markers and display its aruco id.
+        output = aruco.drawDetectedMarkers(frame, corners, ids)  # detect the aruco markers and display its aruco id.
         
         
         """
@@ -182,7 +177,7 @@ def detect_aruco():
                 ret = aruco.estimatePoseSingleMarkers(corners[i], marker_size,camera_matrix, camera_distortion) # this gives array of rotational and translational vectors respective specific corners
                 rvec, tvec = ret[0][0,0,:], ret[1][0,0,:] # getting rotational vector and translational vector 
                 
-                aruco.drawAxis(image_sharp, camera_matrix, camera_distortion, rvec, tvec, 10) # draws 3D axis in frame
+                aruco.drawAxis(frame, camera_matrix, camera_distortion, rvec, tvec, 10) # draws 3D axis in frame
 
                 R_ct    = np.matrix(cv2.Rodrigues(rvec)[0]) # Rodrigues is a way to parameter a rotation in the 3d space. Ref - https://stackoverflow.com/questions/67088230/what-is-the-aim-of-cv2-rodrigues-applying-on-rvec-in-context-of-camera-calibra
                 R_tc    = R_ct.T # transposing the matrix

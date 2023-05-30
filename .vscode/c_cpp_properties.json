@@ -1,0 +1,37 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/panda/ros_workspace/devel/include/**",
+        "/opt/ros/kinetic/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_planners/chomp/chomp_motion_planner/include/**",
+        "/home/panda/ros_workspace/src/franka_ros/franka_control/include/**",
+        "/home/panda/ros_workspace/src/franka_ros/franka_example_controllers/include/**",
+        "/home/panda/ros_workspace/src/franka_ros/franka_gripper/include/**",
+        "/home/panda/ros_workspace/src/franka_ros/franka_hw/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_planners/chomp/chomp_interface/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_ros/benchmarks/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_plugins/moveit_ros_control_interface/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_ros/move_group/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_ros/robot_interaction/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_setup_assistant/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_plugins/moveit_simple_controller_manager/include/**",
+        "/home/panda/ros_workspace/src/realsense-ros/realsense2_camera/include/**",
+        "/home/panda/ros_workspace/src/robxtask_test_action/include/**",
+        "/home/panda/ros_workspace/src/rxt_panda_tracking/include/**",
+        "/home/panda/ros_workspace/src/moveit/moveit_planners/sbpl/core/sbpl_interface/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
